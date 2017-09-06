@@ -7,7 +7,7 @@ use Doctrine\Common\Annotations\Annotation;
 /**
  * @Annotation
  * @Target({
- *     "CLASS", 
+ *     "CLASS",
  *     "PROPERTY"
  * })
  */

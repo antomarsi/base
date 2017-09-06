@@ -325,7 +325,7 @@ if (!function_exists('parseDate')) {
     }
 }
 
-/**
+/*
  * Get Enviorment variable.
  */
 if (!function_exists('env')) {

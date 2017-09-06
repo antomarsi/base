@@ -7,10 +7,9 @@ use Illuminate\Support\ServiceProvider;
 use LaravelDoctrine\Extensions\GedmoExtensionsServiceProvider;
 use LaravelDoctrine\Migrations\MigrationsServiceProvider;
 use LaravelDoctrine\ORM\DoctrineServiceProvider;
+use LaravelDoctrine\ORM\Facades\Doctrine;
 use LaravelDoctrine\ORM\Facades\EntityManager;
 use LaravelDoctrine\ORM\Facades\Registry;
-use LaravelDoctrine\ORM\Facades\Doctrine;
-
 
 class BludataServiceProvider extends ServiceProvider
 {
