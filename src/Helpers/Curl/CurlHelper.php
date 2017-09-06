@@ -1,6 +1,6 @@
 <?php
 
-namespace Bludata\Curl\Helpers;
+namespace Bludata\Helpers\Curl;
 
 class CurlHelper
 {

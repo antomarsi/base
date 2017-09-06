@@ -3,6 +3,7 @@
 namespace Bludata\Lumen\Http\Middleware;
 
 use Closure;
+use Illuminate\Http\Response;
 
 class CorsMiddleware
 {
@@ -25,7 +26,7 @@ class CorsMiddleware
         }
 
         if ($request->getRealMethod() == 'OPTIONS') {
-            return new \Illuminate\Http\Response('OK', 200);
+            return new Response('OK', 200);
         }
 
         return $next($request);

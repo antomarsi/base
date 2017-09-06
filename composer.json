@@ -7,16 +7,13 @@
     "license": "MIT",
     "authors": [{
         "name": "Raí Vieira Adriano",
-        "email": "rai.vieira@bludata.com.br"
+        "email": "raivieiraadriano92@gmail.com"
     }, {
         "name": "Jonathan A. Schweder",
         "email": "jonathan.schweder@bludata.com.br"
     }, {
         "name": "Cristian Santos",
         "email": "cristian.santos@bludata.com.br"
-    }, {
-        "name": "Schasta Jensen",
-        "email": "schasta.jensen@bludata.com.br"
     }],
     "require": {
         "php": ">=5.6.4",
@@ -42,8 +39,7 @@
             "Bludata\\": "src/"
         },
         "files": [
-            "./src/Common/Helpers/helpers.php",
-            "./src/Lumen/helpers.php"
+            "./src/Helpers/functions.php"
         ]
     },
     "autoload-dev": {

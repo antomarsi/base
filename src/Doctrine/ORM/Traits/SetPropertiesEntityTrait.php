@@ -2,7 +2,6 @@
 
 namespace Bludata\Doctrine\ORM\Traits;
 
-use Bludata\Common\Helpers\FormatHelper;
 use Bludata\Doctrine\Common\Annotations\ToObject;
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\ORM\Mapping\Column;
@@ -74,7 +73,7 @@ trait SetPropertiesEntityTrait
                     $toObject = array_shift($toObject);
 
                     /*
-                     * Caso seja um campo de data, utilizamos o método FormatHelper::parseDate para converter o valor enviado pelo usuário para um objeto DateTime.
+                     * Caso seja um campo de data, utilizamos o helper parseDate() para converter o valor enviado pelo usuário para um objeto DateTime.
                      */
                     if ($column instanceof Column && ($column->type == 'date' || $column->type == 'datetime' || $column->type == 'time')) {
                         if ($column->type == 'time' && (is_string($valueKey) && strlen($valueKey) == 5)) {
@@ -82,7 +81,7 @@ trait SetPropertiesEntityTrait
                         }
 
                         $this->$methodSet(
-                            $valueKey ? FormatHelper::parseDate($valueKey, ($column->type == 'date' ? 'Y-m-d' : ($column->type == 'datetime' ? 'Y-m-d H:i:s' : 'H:i:s'))) : null
+                            $valueKey ? parseDate($valueKey, ($column->type == 'date' ? 'Y-m-d' : ($column->type == 'datetime' ? 'Y-m-d H:i:s' : 'H:i:s'))) : null
                         );
                     } else {
                         /**

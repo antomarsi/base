@@ -277,3 +277,126 @@ if (!function_exists('get_property_annotations')) {
         return $annotations;
     }
 }
+
+if (!function_exists('onlyNumbers')) {
+    function onlyNumbers($input)
+    {
+        return preg_replace('/\D/i', '', $input);
+    }
+}
+
+if (!function_exists('parseDate')) {
+    function parseDate($date, $from = 'Y-m-d', $to = 'obj')
+    {
+        if (!is_string($from)) {
+            throw new \InvalidArgumentException('Formato de entrada inválido');
+        }
+
+        if (!is_string($to)) {
+            throw new \InvalidArgumentException('Formato de saída inválido');
+        }
+
+        if ($date instanceof \DateTime && $to === 'obj') {
+            return $date;
+        }
+
+        if ($date instanceof \DateTime) {
+            return $date->format($to);
+        }
+
+        $dateObject = \DateTime::createFromFormat($from, $date);
+
+        if ($to === 'obj') {
+            return $dateObject;
+        }
+
+        if (is_string($to)) {
+            return $dateObject->format($to);
+        }
+
+        throw new \InvalidArgumentException(
+            sprintf(
+                'Não foi possível converter a data "%s" do formato "%s" para o formato "%s"',
+                $date,
+                $from,
+                $to
+            )
+        );
+    }
+}
+
+/**
+ * Get Enviorment variable.
+ */
+if (!function_exists('env')) {
+
+    /**
+     * @param string $key
+     */
+    function env($key, $defaultValue = '')
+    {
+        $env = getenv($key);
+        if (!$env) {
+            return $defaultValue;
+        }
+
+        return $env;
+    }
+}
+
+/*
+ * Register a entierly directory of annotations
+ */
+if (!function_exists('register_annotation_dir')) {
+
+    /**
+     * @param string $dir
+     */
+    function register_annotation_dir($dir)
+    {
+        if (!is_dir($dir)) {
+            return false;
+        }
+
+        $handle = opendir($dir);
+        while ($path = readdir($handle)) {
+            $toRegisterPath = implode(DIRECTORY_SEPARATOR, [$dir, $path]);
+            register_annotation_file($toRegisterPath);
+        }
+
+        return true;
+    }
+}
+
+/*
+ * Register a single file annotation
+ */
+if (!function_exists('register_annotation_file')) {
+
+    /**
+     * @param string $file
+     */
+    function register_annotation_file($file)
+    {
+        if (!is_file($file)) {
+            return false;
+        }
+
+        return \Doctrine\Common\Annotations\AnnotationRegistry::registerFile($file);
+    }
+}
+
+/*
+ * Default binding a repository interface to a concret class
+ */
+if (!function_exists('bind_repository_interface')) {
+    function bind_repository_interface($repositoryInterface, $repository, $entity)
+    {
+        app()->bind($repositoryInterface, function ($app) use ($repository, $entity) {
+            return new $repository(
+                $app['em'],
+                $app['em']->getClassMetaData($entity)
+            );
+        });
+    }
+}

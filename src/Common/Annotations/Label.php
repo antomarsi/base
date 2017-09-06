@@ -6,18 +6,14 @@ use Doctrine\Common\Annotations\Annotation;
 
 /**
  * @Annotation
+ * @Target({
+ *     "CLASS", 
+ *     "PROPERTY"
+ * })
  */
 class Label extends Annotation
 {
     protected $exclusive = false;
-
-    public function getTargets()
-    {
-        return [
-            self::CLASS_CONSTRAINT,
-            self::PROPERTY_CONSTRAINT,
-        ];
-    }
 
     public function getLabel()
     {
