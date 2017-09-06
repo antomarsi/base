@@ -1,6 +1,6 @@
 <?php
 
-namespace Bludata\Common\Annotations;
+namespace Bludata\Doctrine\Common\Annotations;
 
 use Doctrine\Common\Annotations\Annotation;
 

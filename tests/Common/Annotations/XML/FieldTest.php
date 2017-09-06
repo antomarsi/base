@@ -24,7 +24,7 @@ namespace Bludata\Tests\Common\Annotations\XML;
 class FieldStub
 {
     /**
-     * @Bludata\Common\Annotations\XML\Field(name="foo")
+     * @Bludata\Doctrine\Common\Annotations\XML\Field(name="foo")
      */
     public \$property1;
 }
@@ -57,7 +57,7 @@ FieldStubCLASS;
         $reader = new AnnotationReader();
         $annotations = $reader->getPropertyAnnotations($reflectClass);
         $this->assertGreaterThan(0, count($annotations));
-        $this->assertContainsOnlyInstancesOf('Bludata\Common\Annotations\XML\Field', $annotations);
+        $this->assertContainsOnlyInstancesOf('Bludata\Doctrine\Common\Annotations\XML\Field', $annotations);
         return array_values($annotations);
     }
 

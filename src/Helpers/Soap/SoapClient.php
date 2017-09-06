@@ -1,6 +1,6 @@
 <?php
 
-namespace Bludata\Soap;
+namespace Bludata\Helpers\Soap;
 
 use InvalidArgumentException;
 use SoapClient as NativeSoapClient;

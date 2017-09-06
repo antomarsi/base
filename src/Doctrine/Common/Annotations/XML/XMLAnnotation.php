@@ -1,6 +1,6 @@
 <?php
 
-namespace Bludata\Common\Annotations\XML;
+namespace Bludata\Doctrine\Common\Annotations\XML;
 
 abstract class XMLAnnotation
 {

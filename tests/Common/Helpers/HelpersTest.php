@@ -99,7 +99,7 @@ EOF;
         $annotations = get_property_annotations($stub);
         $this->assertNotEmpty($annotations);
         $this->assertInternalType('array', $annotations);
-        $this->assertContainsOnlyInstancesOf('Bludata\Common\Annotations\XML\Field', $annotations['property']);
+        $this->assertContainsOnlyInstancesOf('Bludata\Doctrine\Common\Annotations\XML\Field', $annotations['property']);
     }
 
     public function testGetAllPropertyAnnotationsPassingString()
@@ -107,6 +107,6 @@ EOF;
         $annotations = get_property_annotations('PropertyAnnotationStub');
         $this->assertNotEmpty($annotations);
         $this->assertInternalType('array', $annotations);
-        $this->assertContainsOnlyInstancesOf('Bludata\Common\Annotations\XML\Field', $annotations['property']);
+        $this->assertContainsOnlyInstancesOf('Bludata\Doctrine\Common\Annotations\XML\Field', $annotations['property']);
     }
 }

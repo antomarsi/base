@@ -1,6 +1,6 @@
 <?php
 
-namespace Bludata\Common\Validators;
+namespace Bludata\Doctrine\Common\Validators;
 
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;

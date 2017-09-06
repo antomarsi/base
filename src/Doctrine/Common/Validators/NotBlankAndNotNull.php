@@ -1,17 +1,15 @@
 <?php
 
-namespace Bludata\Common\Validators;
+namespace Bludata\Doctrine\Common\Validators;
 
 use Symfony\Component\Validator\Constraint;
 
 /**
  * @Annotation
  */
-class Instance extends Constraint
+class NotBlankAndNotNull extends Constraint
 {
     public $message;
-    public $expected;
-    public $notBlankAndNotNull = false;
 
     public function getTargets()
     {

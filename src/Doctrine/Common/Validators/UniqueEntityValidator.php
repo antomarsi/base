@@ -1,8 +1,8 @@
 <?php
 
-namespace Bludata\Common\Validators;
+namespace Bludata\Doctrine\Common\Validators;
 
-use Bludata\Common\Annotations\Label;
+use Bludata\Doctrine\Common\Annotations\Label;
 use Bludata\Doctrine\ORM\Helpers\FilterHelper;
 use Datetime;
 use Doctrine\Common\Annotations\AnnotationReader;

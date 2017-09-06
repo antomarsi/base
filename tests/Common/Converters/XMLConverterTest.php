@@ -2,7 +2,7 @@
 
 namespace Bludata\Tests\Common\Converters;
 
-use Bludata\Common\Converters\XMLConverter;
+use Bludata\Doctrine\Common\Converters\XMLConverter;
 use Bludata\Tests\TestCase;
 
 class XMLConverterTest extends TestCase

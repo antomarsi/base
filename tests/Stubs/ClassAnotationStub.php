@@ -1,9 +1,9 @@
 <?php
 
-use Bludata\Common\Annotations\XML\Entity;
+use Bludata\Doctrine\Common\Annotations\XML\Entity;
 
 /**
- * @Bludata\Common\Annotations\XML\Entity(name="foo")
+ * @Bludata\Doctrine\Common\Annotations\XML\Entity(name="foo")
  */
 class ClassAnnotationStub
 {

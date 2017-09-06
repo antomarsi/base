@@ -1,6 +1,6 @@
 <?php
 
-namespace Bludata\Common\Converters;
+namespace Bludata\Doctrine\Common\Converters;
 
 abstract class Converter
 {

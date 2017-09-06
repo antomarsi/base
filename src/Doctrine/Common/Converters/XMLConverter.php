@@ -1,9 +1,9 @@
 <?php
 
-namespace Bludata\Common\Converters;
+namespace Bludata\Doctrine\Common\Converters;
 
-use Bludata\Common\Annotations\XML\Entity;
-use Bludata\Common\Annotations\XML\Field;
+use Bludata\Doctrine\Common\Annotations\XML\Entity;
+use Bludata\Doctrine\Common\Annotations\XML\Field;
 
 class XMLConverter extends Converter
 {

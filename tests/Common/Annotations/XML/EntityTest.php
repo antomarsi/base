@@ -22,7 +22,7 @@ class EntityTest extends TestCase
 namespace Bludata\Tests\Common\Annotations\XML;
 
 /**
- * @Bludata\Common\Annotations\XML\Entity(name="foo")
+ * @Bludata\Doctrine\Common\Annotations\XML\Entity(name="foo")
  */
 class EntityStub
 {
@@ -47,7 +47,7 @@ EntityStubCLASS;
         $reader = new AnnotationReader();
         $annotations = $reader->getClassAnnotations($reflectClass);
         $this->assertGreaterThan(0, count($annotations));
-        $this->assertContainsOnlyInstancesOf('Bludata\Common\Annotations\XML\Entity', $annotations);
+        $this->assertContainsOnlyInstancesOf('Bludata\Doctrine\Common\Annotations\XML\Entity', $annotations);
         return array_values($annotations);
     }
 
