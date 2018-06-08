@@ -6,9 +6,9 @@ use Bludata\Doctrine\Common\Interfaces\BaseEntityInterface;
 
 trait CreateTrait
 {
-    public function testStore(array $entityArray = null)
+    public function testStore(BaseEntityInterface $entity = null)
     {
-        $entityArray = $entityArray ? $entityArray : $this->getRepositoryTest()->getMockArray();
+        $entityArray = $entity ? $entity->toArray() : $this->getRepositoryTest()->getMockArray();
         $response = $this->curlHelper
                          ->post($entityArray)
                          ->send()
