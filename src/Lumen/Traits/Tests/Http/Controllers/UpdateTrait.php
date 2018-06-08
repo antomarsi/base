@@ -6,11 +6,10 @@ use Bludata\Doctrine\Common\Interfaces\BaseEntityInterface;
 
 trait UpdateTrait
 {
-    public function testUpdate(BaseEntityInterface $entity = null)
+    public function testUpdate(array $entityArray = null)
     {
-        $entity = $entity ? $entity : $this->getRepositoryTest()->getFlushedMockObject();
+        $flushedMockArray = $entityArray ? $entityArray : $this->getRepositoryTest()->getFlushedMockkArray();
 
-        $flushedMockArray = $entity->toArray();
         $mockArray = $this->getRepositoryTest()->getMockArray();
 
         foreach ($this->getController()->getMainRepository()->createEntity()->getOnlyUpdate() as $key) {
